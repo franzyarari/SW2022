@@ -18,6 +18,13 @@ body {
   padding: 0px;
   font-family: "Sen", sans-serif;
 }
+.full-reset {
+  margin: auto;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 97;
+}
 /*___________________________________________________*/
 
 /*________________________________________header________________________________*/
@@ -29,7 +36,7 @@ body {
 
 /* __________________________barra 1 - informacion de contacto directo ____________________ */
 .bar-info {
-  background: #004691;
+  background: #01204C;
   color: #c6c6c5;
   position: relative;
   width: 100%;
@@ -47,9 +54,9 @@ body {
   font-weight: bold;
 }
 
-/*__________ Barra Nav Desing ---  bg-one-nav ---- blanco logo azul_________________________*/
+/*__________ Barra Nav Desing ---  bg-one-nav ---- _________________________*/
 .bg-one-nav {
-  background: #02559b;
+  background: #004691;
   z-index: 99 !important;
   height: auto;
   margin: auto;
@@ -61,10 +68,10 @@ body {
 .bg-one-nav .nav-link:hover {
   text-decoration: none;
   font-weight: 600;
-  color: #2ff3e0 !important;
+  color: #fff !important;
   z-index: 99 !important;
 }
-/*____________________________Desing bar --- bg-two-nav ---- Azul logo blanco_________________________*/
+/*____________________________barra Desing bar --- bg-two-nav ---- _________________________*/
 .bg-two-nav {
   background: #004a96;
   border-bottom: 1px solid #4988bf;
@@ -84,21 +91,39 @@ body {
   color: #2ff3e0 !important;
 }
 
-/*________________________ estyle nav-bar img navbar-nav  font________________________*/
+
+/*________________________ Nav-bar &  font________________________*/
 .navbar-menu {
   margin: auto;
   height: 85px;
 }
+.navbar-menu ul{
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.navbar-menu ul li ul {
+  display: none;
+}
+
+.navbar-menu ul li a:hover + ul, .navbar-menu ul li ul:hover {
+  display: block;
+}
 .navbar-menu-text {
   font-size: 18px;
   margin: auto;
+  
 }
 
 .navbar-menu-text a {
+  font-family: "Nunito", sans-serif;
   font-size: 18px;
   margin: auto;
   color: #c6c6c5 !important;
   font-style: bold !important;
+  display: block;
+  text-decoration: none;
 }
 
 .navbar-menu .navbar-brand img {
@@ -108,7 +133,7 @@ body {
   height: auto;
   position: relative;
 }
-
+/* 
 .puerta {
   color: #004a96 !important;
   background: #bce0f2 !important;
@@ -152,6 +177,75 @@ body {
   background: #fff537;
   text-decoration: none;
   font-family: "Nunito", sans-serif !important;
+} */
+
+
+/* _______________________________________Megamenu______________________________________  */
+
+.mega-menu {
+  position: absolute;
+  top: auto;
+  left: 0;
+  background-color: #02559b;
+  color: #C6C6C5;
+  z-index: 99999;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 20px 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s all ease-in-out;
+}
+
+.titles-mega-menu{
+  font-family: "Nunito", sans-serif;
+  font-size: 17.5px;
+  list-style: none;
+}
+.mega-menu span {
+  color: #C6C6C5;
+  display: block;
+  padding: 10px 0 0px 0;
+}
+.mega-menu ul {
+  padding: 10px 0 20px 0;
+}
+.mega-menu ul li,
+.mega-menu ul li a {
+  height: 30px;
+  line-height: 30px;
+}
+.mega-menu ul li {
+  display: block;
+  width: 100%;
+}
+.mega-menu ul li a {
+  color: #C6C6C5;
+  -moz-transition: 0.3s all ease-in-out;
+  -ms-transition: 0.3s all ease-in-out;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  font-size: 16.5px;
+}
+.mega-menu ul li a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+.mega-menu ul li a:active,
+.mega-menu ul li a:focus {
+  outline: none;
+  text-decoration: none;
+}
+.show-mega-menu {
+  opacity: 1;
+  height: auto !important;
+  pointer-events: auto;
+}
+.close-mega-menu {
+  color: #fff !important;
+  position: absolute;
+  cursor: pointer;
+  right: 15px;
+  bottom: 10px;
 }
 
 /*_______________________________Contenedor de Slider ----- #container-slider ----____________________________________________*/
@@ -268,6 +362,8 @@ body {
   z-index: 1 !important;
   margin: 0%;
 }
+
+
 /* ______________________carousel-title slider-TITULO 45 PX__________________________________________ */
 
 .slider-title-1 {
@@ -412,7 +508,7 @@ body {
   text-decoration: none;
   color: #fff;
 }
-/*__________________________position-img-Index --- imagenes slider ______________________________________________________*/
+/*__________________________Position-img-Index --- Imagen Slider ______________________________________________________*/
 .position-img-Index {
   /* top: 0px; */
   width: 50%;
@@ -449,13 +545,12 @@ body {
   text-transform: capitalize;
   letter-spacing: 0px;
   font-family: Nunito Sans, sans-serif;
-  font-family: Nunito Sans, sans-serif;
   color: #ffffff;
   font-weight: bold;
   font-style: italic;
 }
 
-/*_________________________________________ IMG CENTER RIGT_______________________________ */
+/*_________________________________________ IMG Index CENTER RIGT_______________________________ */
 
 .position-img-Index-next {
   /* top: 0px; */
@@ -492,7 +587,6 @@ body {
   text-align: center;
   text-transform: capitalize;
   letter-spacing: 0px;
-
   font-family: Nunito Sans, sans-serif;
   color: #ffffff;
   font-weight: bold;
@@ -1077,23 +1171,23 @@ video {
   border-bottom: 2px solid #fff;
 }
 
-.full-reset {
-  /* ESTILO GENERAL */
-  margin: auto;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-  z-index: 97;
-}
-.full-reset {
-  margin: auto;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-  z-index: 97;
-}
+/* .full-reset {
 
-/******===================  ESTILOS  DE PIE DE PAGINA =========================***************/
+  margin: auto;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 97;
+}
+.full-reset {
+  margin: auto;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 97;
+} */
+
+/******===================  ESTILOS  DE PIE DE PAGINA =================***************/
 .footer h4 {
   font-size: 1rem;
 }
@@ -1167,7 +1261,7 @@ video {
   margin: auto;
 }
 
-/*_______________________________menu bar movil__________________________*/
+/*______________________________________________________________menu bar movil__________________________*/
 @media (min-width: 600px) {
 }
 
@@ -1180,45 +1274,8 @@ video {
     font-size: 16px;
     font-weight: bold;
     padding: 0;
-    border-bottom: 1px solid #879fbb; /*linea de separacion entre bloques opcionales */
+    border-bottom: 1px solid #879fbb; /*____________________________________________ */
   }
-  .bg-one-nav .navbar-toggler {
-    background: #fff !important;
-    border: none !important;
-  }
-  .bg-one-nav .fa {
-    color: #004a96 !important;
-  }
-  .bg-two-nav .navbar-toggler {
-    background: #004a96 !important;
-    border: none !important;
-  }
-  .bg-two-nav .fa {
-    color: #fff !important;
-  }
-  .bar-info {
-    display: none;
-  }
-
-  .header {
-    z-index: 99 !important;
-  }
-  .header {
-    z-index: 1020 !important;
-    position: fixed !important;
-  }
-  .sticky-top {
-    background: #fff;
-    display: fixed;
-    width: 100%;
-  }
-  .carousel-inner img {
-    width: 100%;
-    height: 100%;
-    z-index: -1 !important;
-    position: absolute;
-  }
-
   .navbar {
     z-index: 99 !important;
     height: auto;
@@ -1226,11 +1283,54 @@ video {
     position: absolute;
     margin: auto;
   }
-
   .nav-link:hover {
     font-weight: 600;
     border-bottom: 1px solid #035192 !important;
   }
+  /*____________________________________________ */
+  .bg-one-nav .navbar-toggler {
+    background: #fff !important;
+    border: none !important;
+  }
+  .bg-one-nav .fa {
+    color: #004a96 !important;
+  }
+
+  /*____________________________________________ */
+  .bg-two-nav .navbar-toggler {
+    background: #004a96 !important;
+    border: none !important;
+  }
+  .bg-two-nav .fa {
+    color: #fff !important;
+  }
+  /*____________________________________________ */
+  .bar-info {
+    display: none;
+  }
+/*____________________________________________ */
+  .header {
+    z-index: 99 !important;
+  }
+  .header {
+    z-index: 1020 !important;
+    position: fixed !important;
+  }
+  /*____________________________________________ */
+  .sticky-top {
+    background: #fff;
+    display: fixed;
+    width: 100%;
+  }
+  /*____________________________________________ */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+    z-index: -1 !important;
+    position: absolute;
+  }
+/*____________________________________________ */
+
   .bg-one-nav .nav-link {
     z-index: 1;
     color: #004a96 !important;
@@ -1242,6 +1342,7 @@ video {
     color: #5f6368 !important;
     border-bottom: 1px solid #5f6368 !important;
   }
+  /*____________________________________________ */
   .bg-two-nav .nav-link ul li a {
     z-index: 1;
     text-decoration: none;
@@ -1252,6 +1353,7 @@ video {
     color: #2ff3e0 !important;
     border-bottom: 1px solid #2ff3e0 !important;
   }
+  /*____________________________________________ */
   .navbar-brand img {
     margin-top: -2px;
     margin-bottom: -5px;
@@ -1261,6 +1363,244 @@ video {
     width: 125px !important;
     position: relative;
   }
+
+
+/* ______________________Index Title slider slider-title-1__________________________________________ */
+
+.slider-title-1 {
+  width: 50%;
+  height: 250px;
+  margin: 6% auto;
+  /* background-color: rgba(0, 70, 145, 0.5); */
+  /* outline: 3px solid; */
+  /* border-radius: 15px 50px; */
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+.slider-title-1 {
+  left: 10%;
+}
+
+.slider-title-item {
+  margin: 2px auto;
+  width: 100%;
+  height: 0%;
+  /* background: #007bff; */
+  position: relative;
+  z-index:99 ;
+}
+.slider-title-item h5 {
+  margin: 0px;
+  font-size: 22px;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0px;
+  font-family: "Sen", sans-serif;
+  color: #ffffff;
+  font-weight: bold;
+  font-style: italic;
+  position: relative;
+  z-index:99 ;
+}
+
+.slider-title-1 p {
+  width: 100%;
+  margin: 0% auto;
+  font-size: 12px;
+  line-height: 1.9;
+  font-family: poppins;
+  position: relative;
+  z-index:99 ;
+}
+
+/* __________________________________________slider-title-next Title next__________________________________________________ */
+/* .slider-title-next {
+  width: 50%;
+  height: 300px;
+  margin: 6% auto;
+  /* background-color: rgba(0, 70, 145, 0.5); */
+  /* outline: 3px solid; */
+  /* border-radius: 15px 50px; 
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -5;
+} */
+/* .slider-title-next {
+  left: 2%;
+} */
+
+/* .slider-title-next-item {
+  margin: 2px auto;
+  width: 100%;
+  height: 0%;
+  /* background: #007bff; 
+} */
+/* .slider-title-next-item h5 {
+  margin: 7% auto;
+  font-size: 22px;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0px;
+  color: #ffffff;
+  font-weight: bold;
+  font-style: italic;
+  
+} */
+
+/* .slider-title-next-item p {
+  width: 50%;
+  margin: 0% auto;
+  font-size: 12.5px;
+  line-height: 1.9;
+  font-family: poppins;
+  z-index: 0;
+  position: absolute;
+} */
+ /*__________________________Position-img-Index --- Imagen Slider ______________________________________________________*/
+ .position-img-Index {
+  /* top: 0px; */
+  width: 50%;
+  height: 620px;
+  margin: 0% auto;
+  /* background-color: rgba(0, 70, 145, 0.5); */
+  /* outline: 3px solid; */
+  position: absolute;
+  display: flex;
+  justify-content: right;
+  /* align-items: center; */
+  z-index: 0;
+}
+
+.position-img-Index {
+  right: 8%;
+}
+.position-img-item {
+  width: 100%;
+  height: 50%;
+  /* background: #9b9fa3; */
+}
+.position-img-item img {
+  width:100%;
+  height: 100%;
+  margin: 105% 0 auto;
+  justify-content: center;
+  
+}
+
+.position-img-item p {
+  margin: auto;
+  font-size: medium;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0px;
+  font-family: Nunito Sans, sans-serif;
+  color: #ffffff;
+  font-weight: bold;
+  font-style: italic;
+}
+/*_________________________________________ IMG Index CENTER RIGT_______________________________ */
+
+.position-img-Index-next {
+   top: 0px; 
+  width: 50%;
+  height: 620px;
+  margin: 0% auto;
+  /* background-color: rgba(0, 70, 145, 0.5); */
+  /* outline: 3px solid; */
+  position: absolute;
+  display: flex;
+  justify-content: right;
+  /* align-items: center; */
+  z-index: 0;
+}
+
+.position-img-Index-next {
+  right: 5%;
+}
+
+.position-img-item-next {
+  width: 100%;
+  height: 250%;
+  /* background: #9b9fa3; */
+  position: relative;
+  z-index: -3;
+}
+.position-img-item-next img {
+  width: 100% ;
+  height: auto;
+  margin: 132% 0 auto;
+  justify-content: center;
+  z-index: -99;
+  position: absolute;
+}
+.position-img-item-next p {
+  margin: auto;
+  font-size: medium;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0px;
+  font-family: Nunito Sans, sans-serif;
+  color: #ffffff;
+  font-weight: bold;
+  font-style: italic;
+}
+/* _____________________________________________________ btnSlider___________*/
+
+.slider-title-1 .btnSlider {
+  color: #fff;
+  font-size: 8pt;
+  font-family: "Nunito", sans-serif;
+  letter-spacing: 1px;
+  padding: 5px 25px;
+  margin-top: 15%;
+  margin: 45% 25%;
+  border: 1px solid #ccc;
+  background: rgba(13, 202, 240, 0.55);
+  border-radius: 31px;
+  position: absolute;
+  transition: 0.5s all;
+  z-index: 99;
+}
+.btnSlider:hover {
+  background: #007bff;
+  border: 1px solid #27c3f3;
+  background: rgba(0, 123, 255, 0.55);
+  z-index: 1;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* _________________________________________________ btnSlider-2___________*/
+
+.slider-title-next .btnSlider-2 {
+  color: #fff;
+  font-size: 8pt;
+  font-family: "Nunito", sans-serif;
+  letter-spacing: 1px;
+  padding: 5px 25px;
+  margin-top: 15%;
+  margin: 45% 25%;
+  border: 1px solid #ccc;
+  background: rgba(13, 202, 240, 0.55);
+  border-radius: 31px;
+  position: absolute;
+  transition: 0.5s all;
+  z-index: 1;
+}
+.btnSlider-2:hover {
+  background: #007bff;
+  border: 1px solid #27c3f3;
+  background: rgba(0, 123, 255, 0.55);
+  z-index: 1;
+  text-decoration: none;
+  color: #fff;
+}
+
 
   .inner img {
     width: 100% !important;
@@ -1278,7 +1618,14 @@ video {
   .collapse {
     z-index: 1099;
   }
+
+  .navbar-expand-lg .navbar-nav .dropdown-menu{
+    position: inherit !important;
+  }
+ 
 }
+
+
 
 /*___________________________________________________________col-md_______________________________________________________________________ */
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -1291,6 +1638,10 @@ video {
   }
   .scroll-navigation-ins {
     width: 230px;
+  }
+
+  .navbar-expand-lg .navbar-nav .dropdown-menu{
+    position: inherit !important;
   }
 }
 
@@ -1306,3 +1657,10 @@ video {
 
 /*________________________________________fin_______________________________________________*/
 /*________________________________________fin_______________________________________________*/
+
+@media (min-width: 992px){
+  .navbar-expand-lg .navbar-nav .dropdown-menu {
+    /* position: absolute; */
+    position: inherit !important;
+  }
+}
